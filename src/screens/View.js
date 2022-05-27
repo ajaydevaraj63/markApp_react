@@ -4,10 +4,10 @@ import Nav from './Nav'
 
 const View = () => {
       var[lists,setlists]=useState([])
-      axios.get("http://localhost:4000/api/viewall").then(
-            (Response)=>{
-                  console.log(Response.data)
-              setlists(Response.data)    
+      axios.get("http://localhost:4000/api/viewmark").then(
+            (response)=>{
+                  console.log(response.data)
+              setlists(response.data)    
             }
       )
       var list=[
@@ -47,7 +47,7 @@ const View = () => {
           return  <tr>
         
             <td>{value.name}</td>
-            <td>{value.reg}</td>
+            <td>{value.regno}</td>
             <td>{value.cgp}</td>
           </tr>
          

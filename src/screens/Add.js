@@ -1,13 +1,18 @@
+import axios from 'axios'
 import React, { useState } from 'react'
 import Nav from './Nav'
 
 const Add = () => {
       var[name,setname]=useState("")
-      var[reg,setreg]=useState("")
+      var[regno,setreg]=useState("")
       var[cgp,setcgp]=useState("")
       const add=()=>{
-           var data={"name":name,"reg":reg,"cgp":cgp}
-           console.log(data)
+           var data={"name":name,"regno":regno,"cgp":cgp}
+           
+          axios.post("http://localhost:4000/api/addmark",data).then((Response)=>{
+            console.log(Response.data)
+                
+          })
 
       }
   return (
